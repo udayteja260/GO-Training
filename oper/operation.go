@@ -9,8 +9,14 @@ type Movie struct {
 	Hero  string
 	year  int
 }
+type Theatre struct {
+	Name     string
+	location string
+	Title    Movie
+}
 
 func Operation1() {
+
 	for i := 0; i < 10; i++ {
 		fmt.Println(i)
 	}
@@ -41,7 +47,12 @@ func Operation1() {
 		Hero:  "Prabhas",
 		year:  2017,
 	}
-	fmt.Println(movie1.Title, "is", movie1.Hero, "Movie Released in year", movie1.year)
+	theatre1 := Theatre{
+		Name:     "AMC",
+		location: "Dekalb",
+		Title:    movie1,
+	}
+	fmt.Printf("%s is releasing in %s located in %s", theatre1.Title.Title, theatre1.Name, theatre1.location)
 	numbers := [5]int{1, 2, 3, 4, 5}
 	fmt.Println(numbers[0])
 }
